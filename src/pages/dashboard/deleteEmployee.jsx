@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 const DeleteEmployee = ({ id }) => {
   const [show, setShow] = useState(false);
-
+  console.log(id);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleDelete = () => {
@@ -20,7 +20,9 @@ const DeleteEmployee = ({ id }) => {
         <Modal.Header closeButton>
           <Modal.Title>Delete Employee</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Are you sure you want to delete this employee?</Modal.Body>
+        <Modal.Body>
+          Are you sure you want to delete this employee:{id}?
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={handleClose}>
             Close
