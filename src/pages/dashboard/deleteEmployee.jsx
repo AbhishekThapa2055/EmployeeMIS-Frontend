@@ -12,7 +12,7 @@ const DeleteEmployee = ({ id }) => {
       const response = await fetch(
         `https://amusing-victory-production.up.railway.app/api/employee/${id}`,
         {
-          method: "DELTE",
+          method: "DELETE",
         }
       );
     } catch (error) {
