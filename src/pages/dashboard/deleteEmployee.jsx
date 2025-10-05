@@ -2,7 +2,7 @@ import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 
-const DeleteEmployee = ({ id }) => {
+const DeleteEmployee = ({ id, onDeleteSuccess }) => {
   const [show, setShow] = useState(false);
   console.log(id);
   const handleClose = () => setShow(false);
@@ -15,6 +15,9 @@ const DeleteEmployee = ({ id }) => {
           method: "DELETE",
         }
       );
+      if (response.ok) {
+        onDeleteSuccess(id);
+      }
     } catch (error) {
       console.log("Error deleting employee", error.message);
     }
@@ -29,15 +32,13 @@ const DeleteEmployee = ({ id }) => {
         <Modal.Header closeButton>
           <Modal.Title>Delete Employee</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          Are you sure you want to Delete this Employee:{id}?
-        </Modal.Body>
+        <Modal.Body>Are you sure you want to Delete this Employee</Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={handleClose}>
             Close
           </Button>
           <Button variant="success" onClick={handleDelete}>
-            Save Changes
+            Delete
           </Button>
         </Modal.Footer>
       </Modal>

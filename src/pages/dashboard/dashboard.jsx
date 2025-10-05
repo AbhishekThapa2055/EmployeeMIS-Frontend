@@ -6,6 +6,14 @@ import DeleteEmployee from "./deleteEmployee";
 
 const Dashboard = () => {
   const [employees, setEmployees] = useState([]);
+  // Dashboard.jsx
+
+  const handleDeleteSuccess = (deletedId) => {
+    // Filter out the deleted employee from the list
+    setEmployees((prevEmployees) =>
+      prevEmployees.filter((employee) => employee.id !== deletedId)
+    );
+  };
 
   useEffect(() => {
     const fetchEmployee = async () => {
@@ -46,7 +54,10 @@ const Dashboard = () => {
                 <td>{employee.department}</td>
                 <td>
                   <Button variant="outline-secondary">Edit</Button>{" "}
-                  <DeleteEmployee id={employee.id} />
+                  <DeleteEmployee
+                    id={employee.id}
+                    onDeleteSuccess={handleDeleteSuccess}
+                  />
                 </td>
               </tr>
             ))}
