@@ -8,7 +8,7 @@ const DeleteEmployee = ({ id }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleDelete = () => {
-    console.log("Employee deleted!!");
+    console.log(id);
     handleClose();
   };
   return (
@@ -18,7 +18,7 @@ const DeleteEmployee = ({ id }) => {
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Delete Employee {id}</Modal.Title>
+          <Modal.Title>Delete Employee</Modal.Title>
         </Modal.Header>
         <Modal.Body>Are you sure you want to delete this employee?</Modal.Body>
         <Modal.Footer>
