@@ -7,8 +7,17 @@ const DeleteEmployee = ({ id }) => {
   console.log(id);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleDelete = () => {
-    console.log(id);
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(
+        `https://amusing-victory-production.up.railway.app/api/employee/${id}`,
+        {
+          method: "DELTE",
+        }
+      );
+    } catch (error) {
+      console.log("Error deleting employee", error.message);
+    }
     handleClose();
   };
   return (
