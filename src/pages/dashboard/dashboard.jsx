@@ -9,6 +9,7 @@ const Dashboard = () => {
   // Dashboard.jsx
 
   const handleDeleteSuccess = (deletedId) => {
+    console.log("inside function:" + deletedId);
     // Filter out the deleted employee from the list
     setEmployees((prevEmployees) =>
       prevEmployees.filter((employee) => employee.id !== deletedId)
