@@ -46,7 +46,7 @@ const Dashboard = () => {
                 <td>{employee.department}</td>
                 <td>
                   <Button variant="outline-secondary">Edit</Button>{" "}
-                  <DeleteEmployee />
+                  <DeleteEmployee id={employee.id} />
                 </td>
               </tr>
             ))}

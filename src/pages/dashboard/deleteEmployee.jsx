@@ -2,7 +2,7 @@ import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 
-const DeleteEmployee = () => {
+const DeleteEmployee = ({ id }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -18,7 +18,7 @@ const DeleteEmployee = () => {
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Delete Employee</Modal.Title>
+          <Modal.Title>Delete Employee {id}</Modal.Title>
         </Modal.Header>
         <Modal.Body>Are you sure you want to delete this employee?</Modal.Body>
         <Modal.Footer>
