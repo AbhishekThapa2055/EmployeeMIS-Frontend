@@ -21,7 +21,7 @@ const DeleteEmployee = ({ id }) => {
           <Modal.Title>Delete Employee</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Are you sure you want to delete this employee:{id}?
+          Are you sure you want to Delete this Employee:{id}?
         </Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={handleClose}>
